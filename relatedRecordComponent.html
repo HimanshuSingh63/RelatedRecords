@@ -1,0 +1,28 @@
+<!-- accountRelatedList.html -->
+<template>
+    <lightning-card title="Related Contacts">
+            <template if:true={contactsData}>
+                <lightning-datatable
+                    key-field="Id"
+                    data={contactsData}
+                    columns={contactsColumns}
+                    onrowaction={handleRowAction}
+                    hide-checkbox-column
+                    draft-values={draftValues}
+                ></lightning-datatable>
+            </template>
+    </lightning-card>
+
+   <lightning-card title="Related Opportunities">
+            <template if:true={opportunitiesData}>
+                <lightning-datatable
+                    key-field="Id"
+                    data={opportunitiesData}
+                    columns={opportunitiesColumns}
+                    onrowaction={handleRowAction}
+                    hide-checkbox-column
+                    draft-values={draftValues}
+                ></lightning-datatable>
+            </template>
+    </lightning-card>
+</template>
