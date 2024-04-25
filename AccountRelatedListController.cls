@@ -17,4 +17,14 @@ public with sharing class AccountRelatedListController {
             WHERE AccountId = :accountId
         ];
     }
+    @AuraEnabled
+    public static void updateFileds(List <SObject> recordInput) {
+    System.debug('recordInput ' + recordInput);
+
+    try {
+        update recordInput;
+    } catch (Exception e) {
+        throw new AuraHandledException('Could not update records: ' + e.getMessage());
+    }
+}
 }
