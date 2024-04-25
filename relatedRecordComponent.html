@@ -6,10 +6,11 @@
                     key-field="Id"
                     data={contactsData}
                     columns={contactsColumns}
-                    onrowaction={handleRowAction}
+                    onsave={handleSave}
                     hide-checkbox-column
                     draft-values={draftValues}
                 ></lightning-datatable>
+                
             </template>
     </lightning-card>
 
@@ -19,10 +20,20 @@
                     key-field="Id"
                     data={opportunitiesData}
                     columns={opportunitiesColumns}
-                    onrowaction={handleRowAction}
+                    onsave={handleSave}
                     hide-checkbox-column
                     draft-values={draftValues}
                 ></lightning-datatable>
+                <div slot="footer">
+                    <div class="slds-grid slds-gutters">
+                        <div class="slds-col slds-size_10-of-12 slds-text-align_left">
+                            Sum
+                        </div>
+                        <div class="slds-col slds-size_2-of-12 slds-text-align_right">
+                            = $ {sumOfAmount}
+                        </div>
+                      </div>
+                </div>
             </template>
     </lightning-card>
 </template>
